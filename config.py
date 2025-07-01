@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     db_name: str = Field(..., env='DB_NAME')
     db_url: str = Field(..., env='DB_URL')
 
+
     # Application settings
     app_name: str = Field('MyApp', env='APP_NAME')
     app_version: str = Field('1.0.0', env='APP_VERSION')
