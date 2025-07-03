@@ -216,12 +216,11 @@ const backQuestion=() =>
   return (
 
   
-    <div style={{ maxWidth: "700px", margin: "0 auto", padding: "20px" }}>
-
+    <div className="quiz-container" >
 
         <h1>Quiz Questions</h1>
         
-        <p className='my-paragraph' > Topic: 
+        <p className='quiz-paragraph' > Topic : 
           <select value={topic} onChange={(e) => setTopic(e.target.value)}>
             <option value="">Select Topic</option>
             <option value="maths">Math</option>
@@ -229,7 +228,7 @@ const backQuestion=() =>
             <option value="history">History</option>
           </select>
           </p>
-          <p>level:
+          <p className="quiz-paragraph">level :
             <select value={level} onChange={(e) => handleChangelevel(e)}>
                 <option value="0">Select Level</option>
                 <option value="1">Easy</option>
@@ -246,10 +245,10 @@ const backQuestion=() =>
           (
             <div> 
 
-            <h2>Quiz - Question number - {currentIndex +1} out of  {quizQuestions.length} </h2>
-           
-            <p><strong>Question : {quizQuestions[currentIndex].question_text}</strong></p>
-            <ul style={{ listStyle: "none", padding: 0 }}>     
+            <h2 className="quiz-summary">Quiz - Question number - <span className="text-green">{currentIndex +1}</span>  out of  {quizQuestions.length} </h2>
+
+            <p className='quiz-paragraph'><strong>Question : {quizQuestions[currentIndex].question_text}</strong></p>
+            <ul style={{ listStyle: "none", padding: 0 }}>
 
             {quizQuestions[currentIndex].answers.map((answer, index) => 
             {
