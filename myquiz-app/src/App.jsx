@@ -1,24 +1,29 @@
 
 
 import React from "react";
-import Home from "./component/Home.jsx"
+import Home from "./pages/Home.jsx"
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Navbar from './component/Navbar.jsx'
 
 import Quiz from "./component/QuizSample2.tsx";
+import Banner from "./component/Banner.jsx";
 
 function App() {
 
-    /* <div><Quiz/></div> 
-   <div><MovieResults/></div> */
+  
  return(
 
   <div>
+  
+
+      
+      <BrowserRouter>
+
+ <Banner />
+<Navbar />
    
-   <div>
-    <BrowserRouter>
-    <Navbar/>
+
     <Routes >
         <Route path="/" element={<Home />}/>
          {/*<Route path="/services" element={<Services />}/>
@@ -30,7 +35,7 @@ function App() {
     
     </BrowserRouter>
     </div> 
- </div> 
+
 
 );
 
