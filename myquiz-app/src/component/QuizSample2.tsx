@@ -90,7 +90,7 @@ const level = event.target.value;
     //const response = await fetch(`${API_URL}&s=${title}`);
     const api_url = `${baseURL}${prefix}/${level}/${topic}`;
 
-    //alert("API URL: " + api_url);
+    //alert("API URL: " + api_url);""
 
     
            //alert("getQuestions called with topic: " + topic + " and level: " + level);
@@ -127,17 +127,6 @@ const level = event.target.value;
          }
         
 
-
-/* useEffect(() => {
-   // Fetch questions when the component mounts
-   handleChangelevel();
-
- },[topic,level]); // Re-fetch when topic or level changes
-  //console.log('quizQuestions:', quizQuestions);*/
-
-
-
-  //console.log('quizQuestionsLength:', quizQuestionsLength);
 
   const handleAnswerClick = (option: boolean, idx :number) => {
 
@@ -216,11 +205,12 @@ const backQuestion=() =>
   return (
 
   
-    <div className="quiz-container" >
+    <div className="flex w- w-full flex-col text-sm px-4 md:px-16 lg:px-24 xl:px-40 text-black">
+ 
 
-        <h1>Quiz Questions</h1>
-        
-        <p className='quiz-paragraph' > Topic : 
+        <h1 className="text-xl font-bold bg-blue-100 text-center px-2 py-1 mt-1 rounded">Quiz Questions</h1>
+
+        <p className='text-sm font-medium text-gray-700 px-1 py-1 mt-1 mb-1'> Topic :
           <select value={topic} onChange={(e) => setTopic(e.target.value)}>
             <option value="">Select Topic</option>
             <option value="maths">Math</option>
@@ -228,7 +218,7 @@ const backQuestion=() =>
             <option value="history">History</option>
           </select>
           </p>
-          <p className="quiz-paragraph">level :
+          <p className="text-sm font-medium text-gray-700 px-1 py-1 mt-1 mb-1">level :
             <select value={level} onChange={(e) => handleChangelevel(e)}>
                 <option value="0">Select Level</option>
                 <option value="1">Easy</option>
@@ -245,9 +235,9 @@ const backQuestion=() =>
           (
             <div> 
 
-            <h2 className="quiz-summary">Quiz - Question number - <span className="text-green">{currentIndex +1}</span>  out of  {quizQuestions.length} </h2>
+            <h2 className="text-sm font-medium text-gray-700 px-1 py-1 mt-1 mb-1">Quiz - Question number - <span className="text-green">{currentIndex +1}</span>  out of  {quizQuestions.length} </h2>
 
-            <p className='quiz-paragraph'><strong>Question : {quizQuestions[currentIndex].question_text}</strong></p>
+            <p className='text-sm font-medium text-gray-800 px-1 py-1 mt-1 mb-1'><strong>Question : {quizQuestions[currentIndex].question_text}</strong></p>
             <ul style={{ listStyle: "none", padding: 0 }}>
 
             {quizQuestions[currentIndex].answers.map((answer, index) => 
@@ -302,9 +292,9 @@ const backQuestion=() =>
         </div>)
             :
             showScore && <div> 
-            <h3>Your Score: {score} / {quizQuestions.length}</h3> 
-            {score==quizQuestions.length ? (<h3> Wow Good job !</h3>) :(<h3> Please try again !</h3>) } 
-            <p><button  style={{ width: "25%",
+            <h3 className="text-sm font-medium px-1 py-1 mb-1 text-gray-700">Your Score: {score} / {quizQuestions.length}</h3> 
+            {score==quizQuestions.length ? (<h3 className="bg-green-200 py-1 px-1"> Wow Good job !</h3>) :(<h3> Please try again !</h3>) } 
+            <p className="text-sm font-medium text-gray-700 p-2 mb-1"><button  style={{ width: "25%",
                       padding: '10px 20px',
                       marginBottom: "10px",
                       cursor: 'pointer', borderRadius: "8px",
@@ -313,8 +303,8 @@ const backQuestion=() =>
           </div>
         
         ) :   
-        
-        <div><h2>Sorry, No Questions available...</h2> </div>
+
+        <div><h2 className="text-sm font-medium text-gray-700">Sorry, No Questions available...</h2> </div>
 
       } 
 
