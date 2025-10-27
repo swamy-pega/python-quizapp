@@ -13,7 +13,7 @@ const Hero= ()=>
 
     const handleContinue=()=>
     {
-navigate('/quiz-app');
+navigate('/');
 
     }
 
