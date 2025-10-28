@@ -1,0 +1,17 @@
+sour__pycache__/
+.env
+venv/
+.env/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+.env/
+
+# Editor files
+.vscode/
+*.swp
+
+
+
