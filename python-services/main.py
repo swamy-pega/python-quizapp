@@ -66,11 +66,14 @@ app.include_router(generate_geminirouter)
 # Get the parent directory (one level up from this file)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PARENT_DIR = os.path.dirname(BASE_DIR)
+print("Parent Directory: ", PARENT_DIR)
+print("Base Directory: ", BASE_DIR)
 
 # Build the path to /myquiz-app/dist
 static_dir = os.path.join(PARENT_DIR, "myquiz-app", "dist")
+print("Static Directory: ", static_dir)
 # Serve React static files
-app.mount("/quiz-app", StaticFiles(directory=static_dir, html=True), name="quiz-app")
+app.mount("/", StaticFiles(directory=static_dir, html=True), name="quiz-app")
 
 @app.get("/quiz-app")
 def read_root():
