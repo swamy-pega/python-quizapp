@@ -5,7 +5,7 @@ import Home from "./pages/Home.jsx"
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Navbar from './component/Navbar.jsx'
-import Layout from "./pages/AiLayout.jsx";
+import Layout from "./pages/AILayout.jsx";
 import Dashboard from "./pages/dashboard.jsx";
 import GenerateArticle from "./pages/generateArticle.jsx";
 import ReviewResume from "./pages/reviewResume.jsx";
