@@ -88,7 +88,7 @@ const level = event.target.value;
  console.log('API URL:', baseURL+prefix);
 
     //const response = await fetch(`${API_URL}&s=${title}`);
-    const api_url = `${baseURL}${prefix}/${level}/${topic}`;
+    const api_url = `${baseURL}/${prefix}/${level}/${topic}`;
 
     //alert("API URL: " + api_url);""
 
