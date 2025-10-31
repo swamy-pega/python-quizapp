@@ -2,6 +2,7 @@
 import os
 from fastapi import FastAPI, HTTPException,status,Response,Depends
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 #install uvicorn
 from fastapi import Body
 from pydantic import BaseModel
@@ -73,7 +74,13 @@ print("Base Directory: ", BASE_DIR)
 static_dir = os.path.join(PARENT_DIR, "myquiz-app", "dist")
 print("Static Directory: ", static_dir)
 # Serve React static files
-app.mount("/", StaticFiles(directory=static_dir, html=True), name="quiz-app")
+#app.mount("/", StaticFiles(directory=static_dir, html=True), name="quiz-app")
+app.mount("/assets", StaticFiles(directory=os.path.join(static_dir, "assets")), name="assets")
+
+@app.get("/{full_path:path}")
+async def serve_react_app(full_path: str):
+    index_path = os.path.join(static_dir, "index.html")
+    return FileResponse(index_path)
 
 @app.get("/quiz-app")
 def read_root():
