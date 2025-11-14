@@ -70,8 +70,8 @@ PARENT_DIR = os.path.dirname(BASE_DIR)
 print("Parent Directory: ", PARENT_DIR)
 print("Base Directory: ", BASE_DIR)
 
-# Build the path to /myquiz-app/dist
-static_dir = os.path.join(PARENT_DIR, "myquiz-app", "dist")
+# Build the path to /frontend/dist
+static_dir = os.path.join(PARENT_DIR, "frontend", "dist")
 print("Static Directory: ", static_dir)
 # Serve React static files
 #app.mount("/", StaticFiles(directory=static_dir, html=True), name="quiz-app")
